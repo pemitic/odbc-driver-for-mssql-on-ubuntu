@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - odbc-driver-for-mssql-on-ubuntu
