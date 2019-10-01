@@ -1,2 +1,3 @@
 ---
 # defaults file for odbc-driver-for-mssql-on-ubuntu
+mssql_driver_php_version: '7.2'
