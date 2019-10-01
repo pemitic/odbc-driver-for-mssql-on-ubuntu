@@ -32,7 +32,7 @@
 
     - name: Load driver files sqlsrv.so & pdo_sqlsrv.so
       lineinfile:
-        path: /etc/php/7.2/mods-available/{{ item.file }}
+        path: '/etc/php/{{ mssql_driver_php_version }}/mods-available/{{ item.file }}'
         line: 'extension={{ item.driver }}'
         state: present
         create: yes
@@ -42,8 +42,8 @@
 
     - name: Enable the extension for cli and fpm
       file:
-        src: '/etc/php/7.2/mods-available/{{ item.src }}'
-        dest: '/etc/php/7.2/{{ item.dest }}'
+        src: '/etc/php/{{ mssql_driver_php_version }}/mods-available/{{ item.src }}'
+        dest: '/etc/php/{{ mssql_driver_php_version }}/{{ item.dest }}'
         state: link
       with_items:
         - { src: 'sqlsrv.ini', dest: 'cli/conf.d/20-sqlsrv.ini' }
