@@ -8,7 +8,7 @@
 
     - name: Add repository for Microsoft ODBC Driver for SQL Server
       apt_repository:
-        repo: 'deb [arch=amd64] https://packages.microsoft.com/ubuntu/18.04/prod bionic main'
+        repo: 'deb [arch=amd64] https://packages.microsoft.com/ubuntu/20.04/prod bionic main'
         state: present
         filename: mssql-release
         update_cache: yes
